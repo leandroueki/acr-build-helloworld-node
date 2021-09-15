@@ -42,3 +42,10 @@ stages:
         scanType: 'images'
         twistlockService: 'PCC-Image-Scan'
         artifact: '$(containerRegistry)/$(imageRepository):$(tag)'
+
+schedules:
+- cron: "0 16 * * *"
+  displayName: Daily build
+  branches:
+    include:
+    - master
