@@ -1,5 +1,5 @@
 ARG REGISTRY_NAME
-FROM leeandrew.azurecr.io/baseimages/node
+FROM leeandrew.azurecr.io/baseimages/node:latest
 
 COPY . /src
 RUN cd /src && npm install
