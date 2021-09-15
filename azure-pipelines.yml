@@ -14,7 +14,7 @@ variables:
   imageRepository: 'baseimages/node'
   containerRegistry: 'leeandrew.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile-base'
-  tag: '$(Build.BuildId)'
+  tag: 'latest'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -28,6 +28,11 @@ stages:
     pool:
       vmImage: $(vmImageName)
     steps:
+    - task: prisma-cloud-compute-scan@3
+      inputs:
+        scanType: 'images'
+        twistlockService: 'PCC-Image-Scan'
+        artifact: '$(containerRegistry)/$(imageRepository):latest'
     - task: Docker@2
       displayName: Build and push an image to container registry
       inputs:
