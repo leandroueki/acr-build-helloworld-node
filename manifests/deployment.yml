@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: leandrouekiacrbuildhelloworldnode 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: leandrouekiacrbuildhelloworldnode
+  template:
+    metadata:
+      labels:
+        app: leandrouekiacrbuildhelloworldnode 
+    spec:
+      containers:
+        - name: leandrouekiacrbuildhelloworldnode 
+          image: leeandrew.azurecr.io/leandrouekiacrbuildhelloworldnode
+          ports:
+          - containerPort: 80
