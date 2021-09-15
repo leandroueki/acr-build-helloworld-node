@@ -44,7 +44,7 @@ stages:
         artifact: '$(containerRegistry)/$(imageRepository):$(tag)'
 
 schedules:
-- cron: "0 16 * * *"
+- cron: "0 15 * * *"
   displayName: Daily build
   branches:
     include:
