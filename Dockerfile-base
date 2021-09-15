@@ -1,2 +1,2 @@
-FROM node:15-alpine
+FROM node:latest
 ENV NODE_VERSION 15.2.1a
