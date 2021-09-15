@@ -11,7 +11,7 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: '1c99d4dd-03a0-4703-8794-d2cc9a84dea1'
-  imageRepository: 'baseimages/node:15-alpine'
+  imageRepository: 'baseimages/node'
   containerRegistry: 'leeandrew.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile-base'
   tag: '$(Build.BuildId)'
